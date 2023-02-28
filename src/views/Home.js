@@ -1,39 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import useFetch from "../hooks/HttpRequests";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import MovieCard from "../components/MovieCard";
-import axios from "axios";
 
 export default function Home() {
     const url = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=199990f1b48c24344250a53361249e57';
-    const [movies, setMovies] = useState({
-        loading: false,
-        data: null,
-        error: false
-    })
 
-    useEffect(() => {
-        setMovies({
-            loading: true,
-            data: null,
-            error: false
-        })
-        axios.get(url)
-            .then(response => {
-                setMovies({
-                    loading: false,
-                    data: response.data,
-                    error: false
-                })
-            })
-            .catch(() => {
-                setMovies({
-                    loading: false,
-                    data: null,
-                    error: true
-                })
-            })
-    }, [url])
+    const movies = useFetch(url);
 
     let content = null
 

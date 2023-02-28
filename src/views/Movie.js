@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import useFetch from "../hooks/HttpRequests";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
-import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -9,34 +9,10 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 export default function Product() {
     const { id } = useParams();
     const url = `https://api.themoviedb.org/3/movie/${id}?api_key=199990f1b48c24344250a53361249e57`;
-    const [movie, setMovie] = useState({
-        loading: false,
-        data: null,
-        error: false
-    });
+    
+    let movie = useFetch(url);
 
     let content = null;
-
-    useEffect(() => {
-        setMovie({
-            loading: true,
-            data: null,
-            error: false
-        });
-        axios.get(url).then(response => {
-            setMovie({
-                loading: false,
-                data: response.data,
-                error: false
-            });
-        }).catch(() => {
-            setMovie({
-                loading: false,
-                data: null,
-                error: true
-            });
-        })
-    }, [url]);
 
     if (movie.loading) {
         content = <Loader></Loader>
