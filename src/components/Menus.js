@@ -35,6 +35,15 @@ export default function Menus(props) {
                         Contact
                     </Link>
                 </li>
+                <li className="py-2 border-y border-slate-200 w-full">
+                    <Link 
+                        to="/movie/2" 
+                        className="font-medium hover:text-alerange"
+                        onClick={props.closeMenu}
+                    >
+                        Movie
+                    </Link>
+                </li>
             </ul>
         </>
     );

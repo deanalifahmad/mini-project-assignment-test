@@ -4,12 +4,13 @@ import Home from './views/Home';
 import About from './views/About';
 import Contact from './views/Contact';
 import ContactDetails from './views/ContactDetails';
+import Movie from './views/Movie';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App h-full">
       <Router>
         <Header />
 
@@ -32,6 +33,11 @@ function App() {
           <Route 
             path="/contact-details" 
             element={<ContactDetails />}
+          >
+          </Route>
+          <Route 
+            path="/movie/:id" 
+            element={<Movie />}
           >
           </Route>
         </Routes>
