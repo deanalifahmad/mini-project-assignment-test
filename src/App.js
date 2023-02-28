@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App h-full">
+    <div className="App relative pb-10 min-h-screen">
       <Router>
         <Header />
 

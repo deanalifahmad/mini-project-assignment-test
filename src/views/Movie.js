@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function Product() {
     const { id } = useParams();
@@ -63,6 +65,10 @@ export default function Product() {
                         <p className="mb-2">
                             {movie.data.release_date}
                         </p>
+                        <h2 className="font-semibold text-alerange text-justify">Popularity</h2>
+                        <p className="mb-2">
+                            {movie.data.popularity}
+                        </p>
                         <h2 className="font-semibold text-alerange text-justify">Overview</h2>
                         <p className="mb-2">
                             {movie.data.overview}
@@ -74,6 +80,17 @@ export default function Product() {
 
     return(
         <div className="container mx-auto px-4">
+            <div className="p-2">
+                <Link
+                    to="/"
+                    className="font-medium hover:text-alerange"
+                >
+                <FontAwesomeIcon 
+                    icon={faArrowLeft}
+                    className="text-dark"
+                />
+                </Link>
+            </div>
             {content}
         </div>
     );
