@@ -46,7 +46,7 @@ export default function Navigation() {
                 <animated.div 
                     key={item} 
                     style={styles}
-                    className="fixed bg-white top-0 left-0 w-4/5 h-full z-50 shadow p-3 flex flex-col"
+                    className="fixed bg-white top-0 left-0 w-[300px] h-full z-50 shadow p-3 flex flex-col"
                 >
                         <Menus 
                             closeMenu={() => setShowMenu(false)}

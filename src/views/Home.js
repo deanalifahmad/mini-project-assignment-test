@@ -28,8 +28,8 @@ export default function Home() {
     }
 
     return (
-        <div className="container flex flex-col items-center justify-center px-2 mx-auto my-4">
-            <h1 className="my-3 text-dark text-center text-xl font-bold">
+        <div className="flex flex-col items-center justify-center mb-[20px]">
+            <h1 className="popular-title my-4 text-dark text-center text-xl font-bold">
                 What are the most popular movies?
             </h1>
             {content}

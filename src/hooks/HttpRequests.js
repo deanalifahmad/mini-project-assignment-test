@@ -33,18 +33,4 @@ export default function useFetch(url) {
     }, [url])
 
     return request;
-    // const [data, setData] = React.useState(null);
-    // const [loading, setLoading] = React.useState(true);
-
-    // React.useEffect(() => {
-    //     async function init() {
-    //         const response = await fetch(url);
-    //         const json = await response.json();
-    //         setData(json);
-    //         setLoading(false);
-    //     }
-    //     init();
-    // }, [url]);
-
-    // return { data, loading };
 }

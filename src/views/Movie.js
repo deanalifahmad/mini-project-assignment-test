@@ -24,34 +24,38 @@ export default function Product() {
 
     if (movie.data) {
         content = 
-            <div className="container mx-auto p-4">
-                    <h1 className="text-2xl text-center text-dark font-bold mb-3">
+            <div className="flex flex-col items-center justify-center">
+                <div className="card flex align-center w-[75vw] max-w-[650px] px-[50px] py-[30px] bg-slate-50 my-2 rounded-[24px] shadow-md hover:shadow-lg hover:duration-300">
+                    <img 
+                        src={"https://image.tmdb.org/t/p/w500" + movie.data.poster_path}
+                        alt={movie.data.title}
+                        className="max-w-[280px] w-[28vw] h-[300px] object-cover ml-[-60px] mr-[30px] rounded-lg shadow-md"
+                    />
+                <div>
+                    <h2 className="text-2xl text-alerange font-bold">
                         {movie.data.title}
-                    </h1>
-                <div className="flex flex-col items-center">
-                    <div>
-                        <img 
-                            src={"https://image.tmdb.org/t/p/w500" + movie.data.poster_path}
-                            alt={movie.data.title}
-                            className="h-[300px] w-[300px]"
-                        />
-                    </div>
-                    <div className="my-3 mx-2">
-                        <h2 className="font-semibold text-alerange text-justify">Release Date</h2>
-                        <p className="mb-2">
-                            {movie.data.release_date}
-                        </p>
-                        <h2 className="font-semibold text-alerange text-justify">Popularity</h2>
-                        <p className="mb-2">
-                            {movie.data.popularity}
-                        </p>
-                        <h2 className="font-semibold text-alerange text-justify">Overview</h2>
-                        <p className="mb-2">
-                            {movie.data.overview}
-                        </p>
-                    </div>
+                    </h2>
+                    <h3 className="text-dark font-medium">
+                        Release Date
+                    </h3>
+                    <p className="mb-2">
+                        {movie.data.release_date}
+                    </p>
+                    <h3 className="text-dark font-medium">
+                        Popularity
+                    </h3>
+                    <p className="mb-2">
+                        {movie.data.popularity}
+                    </p>
+                    <h3 className="text-dark font-medium">
+                        Overview
+                    </h3>
+                    <p className="mb-2">
+                        {movie.data.overview}
+                    </p>
                 </div>
             </div>
+        </div>
     }
 
     return(

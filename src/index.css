@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+.search-bar {
+    line-height: 28px;
+}
+
+.input {
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    transition: .3s ease;
+}
+
+.input::placeholder {
+    color: #E2E0E0;
+}
+
+.input:focus, .input:hover {
+    outline: none;
+    border-color: #FB6908;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+}
+
+.icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+}
+
 .loader {
     border: 5px solid #E2E0E0;
     border-radius: 50%;
@@ -27,5 +57,26 @@
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media (width <= 740px) {
+    .popular-title {
+        margin-bottom: 40px;
+    }
+
+    .card {
+        flex-direction: column;
+        text-align: center;
+        margin: 60px 40px;
+        padding-left: 30px;
+        padding-right: 30px;
+        max-width: 400px;
+    }
+
+    .card img {
+        margin: -100px 0 30px 0;
+        width: 100%;
+        max-width: 1000px;
     }
 }
